@@ -39,7 +39,7 @@
       },
       "masterSubnetCidr": {
           "type": "string",
-          "defaultValue": "10.100.68.0/24",
+          "defaultValue": "10.100.76.0/24",
           "metadata": {
               "description": "Master node subnet address space"
           }
