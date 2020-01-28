@@ -143,12 +143,17 @@
         "metadata": {
           "description": "The secret of an Azure Active Directory client application"
         }
-      }
+      },
+      "rpObjectId": {
+          "type": "String",
+          "metadata": {
+              "description": "The ObjectID of the Resource Provider Service Principal"
+          }
+      },
     },
     "variables": {
         "spguid": "dfeccd4b-4edf-50a0-b511-881544627694",
         "rpguid": "e94ccf15-db99-4dbd-98cd-dbdf1898f539",
-        "rpclientid": "50c17c64-bc11-4fdd-a339-0ecd396bf911",
         "contribRole": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]"
     },
     "resources": [
@@ -211,7 +216,7 @@
             ],
             "properties": {
                 "roleDefinitionId": "[variables('contribRole')]",
-                "principalId":"[variables('rpclientid')]"
+                "principalId":"[parameters('rpobjectid')]"
             }
         },
         {
