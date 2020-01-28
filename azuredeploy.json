@@ -216,7 +216,7 @@
             ],
             "properties": {
                 "roleDefinitionId": "[variables('contribRole')]",
-                "principalId":"[parameters('rpobjectid')]"
+                "principalId":"[parameters('rpObjectId')]"
             }
         },
         {
