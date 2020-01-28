@@ -61,6 +61,9 @@
     },
     "aadClientSecret": {
       "value": null
+    },
+    "rpObjectId": {
+      "value": null
     }
   }
 }
