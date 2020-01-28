@@ -194,6 +194,9 @@
             "type": "Microsoft.Network/virtualNetworks/providers/roleAssignments",
             "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', variables('spguid'))]",
             "apiVersion": "2018-09-01-preview",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
+            ],
             "properties": {
                 "roleDefinitionId": "[variables('contribRole')]",
                 "principalId":"[parameters('aadObjectId')]"
@@ -203,6 +206,9 @@
             "type": "Microsoft.Network/virtualNetworks/providers/roleAssignments",
             "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', variables('rpguid'))]",
             "apiVersion": "2018-09-01-preview",
+            "dependsOn": [
+                "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
+            ],
             "properties": {
                 "roleDefinitionId": "[variables('contribRole')]",
                 "principalId":"[variables('rpclientid')]"
