@@ -30,7 +30,9 @@ IssuerURL: https://login.microsoftonline.com/<AADTenantID>
 Preferred Username: upn
 
 Callback URL to enter into the AAD SP:
-https://<cluster-console-url>/oauth2callback/AAD
+https://oauth-openshift.apps.<domain>.<location>.aroapp.io/oauth2callback/AAD
+  
+Example: https://oauth-openshift.apps.iijsdf32.eastus.aroapp.io/oauth2callback/AAD
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjmo808%2farm-aro43%2fmaster%2Fazuredeploy.json" target="_blank">
   
