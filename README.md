@@ -21,6 +21,10 @@ az ad sp list --all --query "[?appDisplayName=='Azure Red Hat OpenShift RP'].{na
 ```
 To setup SSO on OpenShift you can use the same SP that you created (Not the RP SP). You will need the AppId(ClientId), the App Secret, and the AAD Tenant Id.
 
+Before the setup ensure that the optional claim 'upn' is added to the AAD application.
+
+![imageofoptionalclaims](https://raw.githubusercontent.com/jmo808/arm-aro43/master/OptionalClaim.png)
+
 The SSO Setup for AAD and Openshift is as follows:
 ```
 Name: AAD
