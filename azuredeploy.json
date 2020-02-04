@@ -303,11 +303,11 @@
                                 },
                                 {
                                     "name": "apiServer",
-                                    "value": "[reference(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters', 'ft45aro43'), '2019-12-31-  preview').apiserverProfile.url]"
+                                    "value": "[reference(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters', parameters('clusterName')), '2019-12-31-preview').apiserverProfile.url]"
                                 },
                                 {
                                     "name": "kubelogin",
-                                    "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters','ft45aro43'), '2019-12-31-preview')]"
+                                    "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters', parameters('clusterName')), '2019-12-31-preview')]"
                                 },
                                 {
                                     "name": "oauthCallbackURL",
@@ -329,7 +329,7 @@
     "outputs": {
          "clusterCredentials": {
              "type": "object",
-             "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters','ft45aro43'), '2019-12-31-preview')]"
+             "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters', parameters('clusterName')), '2019-12-31-preview')]"
          },
          "oauthCallbackURL": {
              "type": "string",
