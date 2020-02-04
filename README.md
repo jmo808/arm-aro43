@@ -43,7 +43,7 @@ Example: `https://oauth-openshift.apps.iijsdf32.eastus.aroapp.io/oauth2callback/
 
 You can find your exact callback/reply URL in the output section of the deployment in the portal.
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjmo808%2farm-aro43%2fmaster%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjmo808%2farm-aro43%2fssoAutomation%2Fazuredeploy.json" target="_blank">
   
 <img src="https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png"/>
 </a>
