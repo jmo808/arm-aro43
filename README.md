@@ -24,6 +24,7 @@ To setup SSO on OpenShift you can use the same SP that you created (Not the RP S
 In order to setup SSO you will need to initially login to the OpenShift cluster with the *kubeadmin* credentials. The temporary credentials are located in the output section of the deployment in the portal.
 
 The SSO Setup for AAD and Openshift is as follows:
+
 ```
 Name: AAD
 ClientID: <AppId>
@@ -31,10 +32,12 @@ ClientSecret: <App Secret>
 IssuerURL: https://login.microsoftonline.com/<AADTenantID>
 Preferred Username: preferred_username
 ```
+
 Callback URL to enter into the AAD SP:
+
 ```
 https://oauth-openshift.apps.<domain>.<location>.aroapp.io/oauth2callback/AAD
-````
+```
   
 Example: `https://oauth-openshift.apps.iijsdf32.eastus.aroapp.io/oauth2callback/AAD`
 
