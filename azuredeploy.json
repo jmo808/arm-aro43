@@ -265,5 +265,15 @@
                 ]
             }
         }
-    ]
+    ],
+    "outputs": {
+         "clusterCredentials": {
+             "type": "object",
+             "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters','ft45aro43'), '2019-12-31-preview')]"
+         },
+         "oauthCallbackURL": {
+             "type": "string",
+             "value": "[concat('https://oauth-openshift.apps.', parameters('domain'), '.', parameters('location'), '.aroapp.io/oauth2callback/AAD')]"
+         }
+    }
 }
