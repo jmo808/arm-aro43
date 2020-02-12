@@ -1,4 +1,6 @@
-To setup SSO on OpenShift you can use the same SP that you created. You will need the AppId(ClientId), the App Secret, and the AAD Tenant Id. NOTE: If you created a separate SSO Service Principal in a different Azure AD Tenant than the cluster service principal then you will need to update the reply URL manually through the portal.
+To setup SSO on OpenShift you can use the same SP that you created. You will need the AppId(ClientId), the App Secret, and the AAD Tenant Id. 
+
+**NOTE**: If you created a separate SSO Service Principal in a different Azure AD Tenant than the cluster service principal then you will need to update the reply URL manually through the portal.
 
 ```
 az login
