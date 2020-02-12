@@ -1,4 +1,4 @@
-To setup SSO on OpenShift you can use the same SP that you created (Not the RP SP). You will need the AppId(ClientId), the App Secret, and the AAD Tenant Id. 
+To setup SSO on OpenShift you can use the same SP that you created. You will need the AppId(ClientId), the App Secret, and the AAD Tenant Id. 
 
 ```
 az login
