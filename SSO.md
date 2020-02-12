@@ -15,9 +15,9 @@ location=$(az aro show -g $aroResourceGroup -n $aroClusterName --query location 
 apiServer=$(az aro show -g $aroResourceGroup -n $aroClusterName --query apiserverProfile.url -o tsv)
 oauthCallbackURL=https://oauth-openshift.apps.$domain.$location.aroapp.io/oauth2callback/AAD
 
-wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.3.1/openshift-client-linux-4.3.1.tar.gz
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.3.1.tar.gz
 wget https://raw.githubusercontent.com/jmo808/arm-aro43/master/oidcCR.yaml
-tar -xf openshift-client-linux-4.3.0.tar.gz
+tar -xf openshift-client-linux-4.3.1.tar.gz
 ./oc login $apiServer -u kubeadmin -p $kubelogin --insecure-skip-tls-verify=true
 ./oc create secret generic openid-client-secret-34 --from-literal=clientSecret=$clientSecret -n openshift-config
 sed -i "s/<clientId>/$clientId/" oidcCR.yaml
