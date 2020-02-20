@@ -18,13 +18,9 @@ spec:
         include_granted_scopes: "true"
       claims:
         preferredUsername: 
-        - preferred_username
         - email
         name: 
-        - nickname
-        - given_name
         - name
         email: 
-        - custom_email_claim
         - email
       issuer: https://login.microsoftonline.com/<tenantId>
