@@ -149,11 +149,23 @@
           "metadata": {
               "description": "The ObjectID of the Resource Provider Service Principal"
           }
+      },
+      "spguid": {
+          "type": "String",
+          "defaultValue": "[newGuid()]",
+          "metadata": {
+              "description": "Unique GUID for RBAC. DO NOT MODIFY PARAMETER"
+          }
+      },
+      "rpguid": {
+          "type": "String",
+          "defaultValue": "[newGuid()]",
+          "metadata": {
+              "description": "Unique GUID for RBAC. DO NOT MODIFY PARAMETER"
+          }
       }
     },
     "variables": {
-        "spguid": "dfeccd4b-4edf-50a0-b511-881544627694",
-        "rpguid": "e94ccf15-db99-4dbd-98cd-dbdf1898f539",
         "contribRole": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]"
     },
     "resources": [
@@ -197,7 +209,7 @@
         },
         {
             "type": "Microsoft.Network/virtualNetworks/providers/roleAssignments",
-            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', variables('spguid'))]",
+            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', parameters('spguid'))]",
             "apiVersion": "2018-09-01-preview",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
@@ -209,7 +221,7 @@
         },
         {
             "type": "Microsoft.Network/virtualNetworks/providers/roleAssignments",
-            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', variables('rpguid'))]",
+            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', parameters('rpguid'))]",
             "apiVersion": "2018-09-01-preview",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
