@@ -1,6 +1,6 @@
 To setup SSO on OpenShift you can use the same SP that you created. You will need the AppId(ClientId), the App Secret, and the AAD Tenant Id. In order to have both B2B AAD users and native AAD users be created properly in OpenShift you will first need to add the optional email claim on the app registration(service principal). 
 
-![Image of Optional Claim Setup](https://github.com/jmo808/arm-aro43/raw/master/email_claim.png)
+![Image of Optional Claim Setup](https://github.com/jmo808/arm-aro43/raw/master/upnClaim.png)
 
 **NOTE**: If you created a separate SSO Service Principal in a different Azure AD Tenant than the cluster service principal then you will need to update the reply URL manually through the portal.
 
