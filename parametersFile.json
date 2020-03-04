@@ -18,7 +18,7 @@
       "value": "10.100.70.0/23"
     },
     "masterSubnetCidr": {
-      "value": "10.100.68.0/24"
+      "value": "10.100.76.0/24"
     },
     "masterVmSize": {
       "value": "Standard_D8s_v3"
@@ -64,6 +64,12 @@
     },
     "rpObjectId": {
       "value": null
+    },
+    "spguid": {
+      "value": "[newGuid()]"
+    },
+    "rpguid": {
+      "value": "[newGuid()]"
     }
   }
 }
