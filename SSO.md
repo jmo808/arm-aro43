@@ -28,6 +28,7 @@ tar -xf openshift-client-linux-4.3.1.tar.gz
 ./oc create secret generic $ocOpenidSecret --from-literal=clientSecret=$clientSecret -n openshift-config
 sed -i "s/<clientId>/$clientId/" oidcCR.yaml
 sed -i "s/<tenantId>/$tenantId/" oidcCR.yaml
+sed -i "s/<secretname>/$ocOpenidSecret/" oidcCR.yaml
 ./oc apply -f oidcCR.yaml
 
 az ad app update --id $clientId --reply-urls $oauthCallbackURL
