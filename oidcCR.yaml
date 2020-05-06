@@ -10,7 +10,7 @@ spec:
     openID:
       clientID: <clientId>
       clientSecret: 
-        name: openid-client-secret-34
+        name: openid-client-secret-<random>
       extraScopes: 
       - email
       - profile
