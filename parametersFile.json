@@ -6,10 +6,13 @@
       "value": "eastus"
     },
     "domain": {
-      "value": "[toLower(substring(uniqueString(resourceGroup().id), 0, 8))]"
+      "value": ""
     },
     "clusterVnetName": {
       "value": "aro-vnet"
+    },
+    "pullSecret": {
+      "value": ""
     },
     "clusterVnetCidr": {
       "value": "10.100.0.0/15"
@@ -24,7 +27,7 @@
       "value": "Standard_D8s_v3"
     },
     "workerVmSize": {
-      "value": "Standard_D2s_v3"
+      "value": "Standard_D4s_v3"
     },
     "workerVmDiskSize": {
       "value": 128
