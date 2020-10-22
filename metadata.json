@@ -1,0 +1,9 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/...",
+    "itemDisplayName": "Azure Red Hat OpenShift 4.x Cluster w/ vNet",
+    "description": "This template deploys an ARO 4.x cluster with a dedicated vNet",
+    "summary": "Deploys ARO 4.x",
+    "githubUsername": "jmo808",
+    "dateUpdated": "2020-10-22",
+    "type": "QuickStart"
+  }

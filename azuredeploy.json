@@ -155,20 +155,6 @@
           "metadata": {
               "description": "The ObjectID of the Resource Provider Service Principal"
           }
-      },
-      "spguid": {
-          "type": "String",
-          "defaultValue": "[newGuid()]",
-          "metadata": {
-              "description": "Unique GUID for RBAC. DO NOT MODIFY PARAMETER"
-          }
-      },
-      "rpguid": {
-          "type": "String",
-          "defaultValue": "[newGuid()]",
-          "metadata": {
-              "description": "Unique GUID for RBAC. DO NOT MODIFY PARAMETER"
-          }
       }
     },
     "variables": {
@@ -176,8 +162,8 @@
     },
     "resources": [
         {
-            "apiVersion": "2019-09-01",
             "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2020-05-01",
             "name": "[parameters('clusterVnetName')]",
             "location": "[parameters('location')]",
             "tags": "[parameters('tags')]",
@@ -215,8 +201,8 @@
         },
         {
             "type": "Microsoft.Network/virtualNetworks/providers/roleAssignments",
-            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', parameters('spguid'))]",
             "apiVersion": "2018-09-01-preview",
+            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', parameters('spguid'))]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
             ],
@@ -227,8 +213,8 @@
         },
         {
             "type": "Microsoft.Network/virtualNetworks/providers/roleAssignments",
-            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', parameters('rpguid'))]",
             "apiVersion": "2018-09-01-preview",
+            "name": "[concat(parameters('clusterVnetName'), '/Microsoft.Authorization/', parameters('rpguid'))]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
             ],
@@ -238,11 +224,11 @@
             }
         },
         {
-            "location": "[parameters('location')]",
-            "name": "[parameters('clusterName')]",
             "type": "Microsoft.RedHatOpenShift/OpenShiftClusters",
-            "tags": "[parameters('tags')]",
             "apiVersion": "2020-04-30",
+            "name": "[parameters('clusterName')]",
+            "location": "[parameters('location')]",
+            "tags": "[parameters('tags')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Network/virtualNetworks', parameters('clusterVnetName'))]"
             ],

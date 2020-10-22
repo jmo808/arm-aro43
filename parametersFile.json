@@ -67,12 +67,6 @@
     },
     "rpObjectId": {
       "value": null
-    },
-    "spguid": {
-      "value": "[newGuid()]"
-    },
-    "rpguid": {
-      "value": "[newGuid()]"
     }
   }
 }
