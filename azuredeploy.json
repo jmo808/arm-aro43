@@ -288,7 +288,7 @@
     "outputs": {
          "clusterCredentials": {
              "type": "object",
-             "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters', parameters('clusterName')), '2019-12-31-preview')]"
+             "value": "[listCredentials(resourceId('Microsoft.RedHatOpenShift/OpenShiftClusters', parameters('clusterName')), '2020-04-30')]"
          },
          "oauthCallbackURL": {
              "type": "string",
