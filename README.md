@@ -11,7 +11,7 @@ You require an Azure service principal and the ARO 4 Resource Provider service p
 
 ```
 az ad sp create-for-rbac --name <appName>
-az ad sp list --filter "displayname eq '<appName>' --query "[?appDisplayName=='<appName>'].{name: appDisplayName, objectId: objectId}"
+az ad sp list --filter "displayname eq '<appName>'" --query "[?appDisplayName=='<appName>'].{name: appDisplayName, objectId: objectId}"
 ```
 
 And to obtain the ARO 4 RP service principal object id execute the following command. WARNING! This process may take a while if you have a large number of service principals. Alternatively you can search for the object id through the portal by navigating to Azure Active Directory and then Enterprise Applications and searching for "Azure Red Hat OpenShift RP":
